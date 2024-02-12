@@ -1,0 +1,45 @@
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+inotify_add_watch(/var/lib/samba/usershares) failed: (Permission denied)
+Hspell: can't open /usr/share/hspell/hebrew.wgz.sizes.
+kf.sonnet.clients.hspell: HSpellDict::HSpellDict: Init failed
+kf.kio.widgets.kdirmodel: No node found for item that was just removed: QUrl("file:///home/ikuu/git/myproject/.Jenkinsfile.kate-swp")
+kf.kio.widgets.kdirmodel: No node found for item that was just removed: QUrl("file:///home/ikuu/git/myproject/.Jenkinsfile.kate-swp")
+inotify_add_watch(/var/lib/samba/usershares) failed: (Permission denied)
+Hspell: can't open /usr/share/hspell/hebrew.wgz.sizes.
+kf.sonnet.clients.hspell: HSpellDict::HSpellDict: Init failed
+kf.kio.widgets.kdirmodel: No node found for item that was just removed: QUrl("file:///home/ikuu/git/myproject/.Jenkinsfile.kate-swp")
+Forwarding from 127.0.0.1:6543 -> 8080
+Forwarding from [::1]:6543 -> 8080
+Handling connection for 6543
+Handling connection for 6543
+Handling connection for 6543
+Handling connection for 6543
+Handling connection for 6543
+Handling connection for 6543
+E0212 18:50:46.556581   95698 portforward.go:381] error copying from remote stream to local connection: readfrom tcp4 127.0.0.1:6543->127.0.0.1:48456: write tcp4 127.0.0.1:6543->127.0.0.1:48456: write: connection reset by peer
+Handling connection for 6543
+E0212 18:52:42.919419   95698 portforward.go:394] error copying from local connection to remote stream: read tcp4 127.0.0.1:6543->127.0.0.1:48426: read: connection reset by peer
+Handling connection for 6543
+Handling connection for 6543
+Handling connection for 6543
+E0212 18:54:49.448488   95698 portforward.go:381] error copying from remote stream to local connection: readfrom tcp4 127.0.0.1:6543->127.0.0.1:33224: write tcp4 127.0.0.1:6543->127.0.0.1:33224: write: broken pipe
+Handling connection for 6543
+Handling connection for 6543
+E0212 18:55:48.887587   95698 portforward.go:394] error copying from local connection to remote stream: read tcp4 127.0.0.1:6543->127.0.0.1:33250: read: connection reset by peer
+Handling connection for 6543
+Handling connection for 6543
+Handling connection for 6543
+Handling connection for 6543
+Handling connection for 6543
+E0212 18:55:52.088925   95698 portforward.go:381] error copying from remote stream to local connection: readfrom tcp4 127.0.0.1:6543->127.0.0.1:58798: write tcp4 127.0.0.1:6543->127.0.0.1:58798: write: broken pipe
+E0212 18:55:55.250463   95698 portforward.go:381] error copying from remote stream to local connection: readfrom tcp4 127.0.0.1:6543->127.0.0.1:58792: write tcp4 127.0.0.1:6543->127.0.0.1:58792: write: broken pipe
+E0212 18:55:55.250539   95698 portforward.go:381] error copying from remote stream to local connection: readfrom tcp4 127.0.0.1:6543->127.0.0.1:58822: write tcp4 127.0.0.1:6543->127.0.0.1:58822: write: broken pipe
+Handling connection for 6543
+Handling connection for 6543
+Handling connection for 6543
+Handling connection for 6543
+Handling connection for 6543
+Handling connection for 6543
+Handling connection for 6543
+E0212 19:01:05.408641   95698 portforward.go:381] error copying from remote stream to local connection: readfrom tcp4 127.0.0.1:6543->127.0.0.1:40172: write tcp4 127.0.0.1:6543->127.0.0.1:40172: write: broken pipe
+E0212 19:01:05.409054   95698 portforward.go:381] error copying from remote stream to local connection: readfrom tcp4 127.0.0.1:6543->127.0.0.1:40186: write tcp4 127.0.0.1:6543->127.0.0.1:40186: write: broken pipe

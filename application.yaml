@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mynginx
+  namespace: argocd
+  annotations:
+    image-version: '1.210'
+spec:
+  project: default
+  source:
+    repoURL: http://10.1.24.246/root/myproject.git
+    path: kubernetes
+    targetRevision: HEAD
+  destination:
+    server: https://10.100.1.140:6443
+    namespace: dev-myproject
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+operation:
+  initiatedBy:
+    username: ikuba
+  sync:
+    syncStrategy:
+      hook: {}
