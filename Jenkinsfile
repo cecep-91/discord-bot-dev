@@ -11,7 +11,7 @@ pipeline {
         
         stage('Versioning') {
             steps {
-                git branch: 'main', url: 'http://nginx-cd:glpat-nJSxwXErzo9NJvwZYkmP@10.1.24.246/root/nginx-cd.git'
+                git branch: 'main', url: 'http://nginx-ci:glpat-QQC9-9qUxRtwuLMMutCT@10.1.24.246/root/nginx-ci.git'
                 script {
                     env.IMAGE_VERSION = input message: 'Image versioning...', ok: 'Take this !!',
                             parameters: [
