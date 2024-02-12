@@ -43,6 +43,7 @@ pipeline {
             steps {
                 script {
                     withKubeConfig(credentialsId: 'kubeconfig') {
+                        sh 'pwd && ls'
                         sh "kubectl apply -f application.yaml"
                     }
                 }
