@@ -41,7 +41,6 @@ pipeline {
         }
         stage('Deploy to Kubernetes') {
             steps {  
-#                git branch: 'main', url: 'http://nginx-ci:glpat-QQC9-9qUxRtwuLMMutCT@10.1.24.246/root/nginx-ci.git'
                 script {
                     withKubeConfig(credentialsId: 'kubeconfig') {
                         sh 'pwd && ls'
