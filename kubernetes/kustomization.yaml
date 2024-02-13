@@ -7,7 +7,7 @@ resources:
 images:
  - name: nginx
    newName: '10.100.1.140/dev-myproject/mynginx'
-   newTag: '1.243'
+   newTag: '1.123123'
 patches:
 - target:
     kind: Deployment
@@ -15,4 +15,4 @@ patches:
   patch: |-
     - op: replace
       path: /spec/replicas
-      value: 2
+      value: 1
