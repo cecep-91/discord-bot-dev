@@ -4,4 +4,4 @@ resources:
 images:
  - name: discord-bot
    newName: 'ikubaru/discord-bot'
-   newTag: '15'
+   newTag: '16'
