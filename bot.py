@@ -15,4 +15,10 @@ async def on_ready():
 async def hi(ctx):
     await ctx.send(f'Hello {ctx.author.mention}!')
 
+@bot.command()
+async def members(ctx):
+    members = ctx.guild.members
+    member_names = [f"- {member.name}" for member in members]
+    await ctx.send("Members in the server:\n" + '\n'.join(member_names))
+
 bot.run('MTIwODMxMjY5NzA1ODIzNDM4OQ.GqiANw.TDvgyBLg86sBOX79RoqPrL-_QZgIESW-QM7FN4')
