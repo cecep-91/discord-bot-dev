@@ -1,8 +1,0 @@
-resources:
-- discord-bot/
-
-Namespace: discord-bot-dev
-labels:
-  - pairs:
-     app: discord-bot
-    includeSelectors: true

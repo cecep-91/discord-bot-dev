@@ -1,0 +1,8 @@
+version: "3.8"
+services:
+  main:
+    build: .
+    image: discord-bot:latest
+    container_name: bot
+    volumes:
+      - /root/python-discord-bot/bot-data:/app/data
