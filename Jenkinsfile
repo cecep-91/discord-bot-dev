@@ -24,7 +24,7 @@ pipeline {
                     sh 'git add kubernetes/kustomization.yaml'
                     sh 'git commit -m "image version $BUILD_NUMBER"'
                 }
-                withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'MyID', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
+                withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'githubpatdiscordbot', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
                     sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/cecep-91/discord-bot-cd.git')
                 }
             }
