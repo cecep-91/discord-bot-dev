@@ -15,7 +15,7 @@ pipeline {
                     }
                 }
                 withCredentials([string(credentialsId: 'discordbotpat', variable: 'gitbotpat')]) {
-                    git branch: "main", url: "${gitbotpat}@github.com/cecep-91/discord-bot-ci.git"
+                    git branch: "main", url: "${gitbotpat}@github.com/cecep-91/discord-bot-cd.git"
                 }
                 script {
                     sh '''sed -i "s/newTag.*/newTag: '$BUILD_NUMBER'/g" kubernetes/kustomization.yaml'''
