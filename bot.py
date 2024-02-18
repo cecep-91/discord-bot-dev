@@ -21,6 +21,4 @@ async def members(ctx):
     member_names = [f"- {member.name}" for member in members]
     await ctx.send("Members in the server:\n" + '\n'.join(member_names))
 
-
-
 bot.run('MTIwODMxMjY5NzA1ODIzNDM4OQ.GqiANw.TDvgyBLg86sBOX79RoqPrL-_QZgIESW-QM7FN4')
