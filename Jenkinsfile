@@ -14,14 +14,12 @@ pipeline {
                         dockerImage.push()
                     }
                 }
-                withCredentials([string(credentialsId: 'discordbotpat', variable: 'gitbotpat')]) {
-                    git branch: 'main', url: '$gitbotpat@github.com/cecep-91/discord-bot-cd.git'
-                }
+                git branch: 'main', credentialsId: 'githubpatdiscordbot', url: '@github.com/cecep-91/discord-bot-cd.git'
                 script {
                     sh '''sed -i "s/newTag.*/newTag: '$BUILD_NUMBER'/g" kubernetes/kustomization.yaml'''
                     
-                    sh 'git config --global user.email "cecepnine@gmail.com"'
-                    sh 'git config --global user.name "cecep-91"'
+                    sh 'git config --global user.email "dummy@gmail.com"'
+                    sh 'git config --global user.name "dummy"
 
                     sh 'git add kubernetes/kustomization.yaml'
                     sh 'git commit -m "image version $BUILD_NUMBER"'
