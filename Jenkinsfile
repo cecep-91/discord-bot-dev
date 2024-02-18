@@ -31,7 +31,6 @@ pipeline {
         }
         stage('Deploy to Kubernetes') {
             steps {
-                git branch: 'main', credentialsId: 'discord-bot-ci', url: 'https://github.com/cecep-91/discord-bot-ci.git'
                 script {
                     withKubeConfig(credentialsId: 'kubeconfig') {
                         sh "kubectl apply -f application.yaml"
