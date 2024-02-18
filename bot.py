@@ -16,10 +16,6 @@ async def hi(ctx):
     await ctx.send(f'Hello {ctx.author.mention}!')
 
 @bot.command()
-async def ping(ctx):
-    await ctx.send(f'pong!')
-
-@bot.command()
 async def members(ctx):
     members = ctx.guild.members
     member_names = [f"- {member.name}" for member in members]
