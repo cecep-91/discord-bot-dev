@@ -31,12 +31,13 @@ pipeline {
         }
         stage('Deploy to Kubernetes') {
             steps {
+                git branch: 'main', credentialsId: 'githubpatdiscordbot', url: 'https://github.com/cecep-91/discord-bot-ci.git'
                 script {
                     withKubeConfig(credentialsId: 'kubeconfig') {
-                        sh "kubectl get node"
+                        sh "kubectl apply -f application.yaml"
                     }
                 }
-                sh "docker rmi $image:$IMAGE_VERSION"
+                sh "docker rmi $image:$BUILD_NUMBER"
             }
         }
     }

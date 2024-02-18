@@ -15,4 +15,4 @@ async def on_ready():
 async def hi(ctx):
     await ctx.send(f'Hello {ctx.author.mention}!')
 
-bot.run('MTIwODMxMjY5NzA1ODIzNDM4OQ.GaYIJh.Mqu9sokGDct8GRCdUeRLwV51cQYhpN9gPPYlGo')
+bot.run('MTIwODMxMjY5NzA1ODIzNDM4OQ.GqiANw.TDvgyBLg86sBOX79RoqPrL-_QZgIESW-QM7FN4')
