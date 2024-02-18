@@ -1,16 +1,22 @@
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: StatefulSet
 metadata:
   name: discord-bot-dev
 spec:
-  containers:
-    - name: discord-bot
-      image: discord-bot
-      volumeMounts:
+  serviceName: discord-bot-dev-service
+  replicas: 1
+  template:
+    metadata:
+      name: discord-bot-dev
+    spec:
+      containers:
+      - name: discord-bot
+        image: discord-bot
+        volumeMounts:
+        - name: secret-volume
+          mountPath: /app/.env
+          subPath: .env
+      volumes:
       - name: secret-volume
-        mountPath: /app/.env
-        subPath: .env
-  volumes:
-    - name: secret-volume
-      secret:
-        secretName: discord-bot-secret
+        secret:
+          secretName: discord-bot-secret
