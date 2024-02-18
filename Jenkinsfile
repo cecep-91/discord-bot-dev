@@ -14,7 +14,7 @@ pipeline {
                         dockerImage.push()
                     }
                 }
-                git branch: 'main', credentialsId: 'githubpatdiscordbot', url: '@github.com/cecep-91/discord-bot-cd.git'
+                git branch: 'main', credentialsId: 'githubpatdiscordbot', url: 'https://github.com/cecep-91/discord-bot-cd.git'
                 script {
                     sh '''sed -i "s/newTag.*/newTag: '$BUILD_NUMBER'/g" kubernetes/kustomization.yaml'''
                     
@@ -31,7 +31,7 @@ pipeline {
             steps {
                 script {
                     withKubeConfig(credentialsId: 'kubeconfig') {
-                        sh "kubectl apply -f "
+                        sh "kubectl get node"
                     }
                 }
                 sh "docker rmi $image:$IMAGE_VERSION"
