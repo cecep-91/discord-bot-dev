@@ -18,8 +18,8 @@ pipeline {
                 script {
                     sh '''sed -i "s/newTag.*/newTag: '$BUILD_NUMBER'/g" kubernetes/kustomization.yaml'''
                     
-                    sh 'git config --global user.email "dummy@gmail.com"'
-                    sh 'git config --global user.name "dummy"'
+                    sh 'git config --global user.email "cecepnine@gmail.com"'
+                    sh 'git config --global user.name "cecep-91"'
 
                     sh 'git add kubernetes/kustomization.yaml'
                     sh 'git commit -m "image version $BUILD_NUMBER"'
