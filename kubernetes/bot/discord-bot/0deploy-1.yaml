@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: discord-bot-dev
+spec:
+  containers:
+    - name: discord-bot
+      image: discord-bot
+      volumeMounts:
+      - name: secret-volume
+        mountPath: /app/.env
+        subPath: .env
+  volumes:
+    - name: secret-volume
+      secret:
+        secretName: discord-bot-secret

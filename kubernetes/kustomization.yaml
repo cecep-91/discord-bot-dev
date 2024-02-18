@@ -1,0 +1,7 @@
+resources:
+- bot/
+
+images:
+ - name: discord-bot
+   newName: 'ikubaru/discord-bot'
+   newTag: '5'

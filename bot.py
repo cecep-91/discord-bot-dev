@@ -1,5 +1,9 @@
 import discord
+import os
 from discord.ext import commands
+from dotenv import load_dotenv
+
+load_dotenv()
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -21,4 +25,4 @@ async def members(ctx):
     member_names = [f"- {member.name}" for member in members]
     await ctx.send("Members in the server:\n" + '\n'.join(member_names))
 
-bot.run('MTIwODMxMjY5NzA1ODIzNDM4OQ.GqiANw.TDvgyBLg86sBOX79RoqPrL-_QZgIESW-QM7FN4')
+bot.run(os.getenv('TOKEN'))

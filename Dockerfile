@@ -5,5 +5,5 @@ COPY requirements.txt /app/
 WORKDIR /app
 RUN pip install -r requirements.txt
 
-COPY . .
+COPY bot.py /app/
 CMD ["python3", "bot.py"]
