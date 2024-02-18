@@ -25,7 +25,7 @@ pipeline {
                         sh "kubectl apply -k kubernetes/"
                     }
                 }
-                sh "docker rmi $image:$1.BUILD_NUMBER"
+                sh "docker rmi $image:1.$BUILD_NUMBER"
             }
         }
     }
