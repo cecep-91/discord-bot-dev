@@ -10,7 +10,7 @@ pipeline {
                         sh "./check-health.sh"
                         def pod = sh(script: 'kubectl get pod -n discord-bot-dev | cut -d " " -f1 | grep discord-bot', returnStdout: true).trim()
                         sh "kubectl exec -n discord-bot-dev $pod -- pip install -r /app/requirements.txt"
-                        sh "kubectl exec -n discord-bot-dev $pod -- killall -9 python3"
+                        sh "kubectl rollout restart deployment -n discord-bot-dev discord-bot-dev"
                     }
                 }
             }
