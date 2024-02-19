@@ -14,7 +14,7 @@ spec:
         image: discord-bot
         volumeMounts:
         - name: secret-volume
-          mountPath: /app/.env
+          mountPath: /app/
           subPath: .env
         - name: config-volume
           mountPath: /app
