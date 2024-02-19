@@ -21,7 +21,7 @@ async def hi(ctx):
     await ctx.send(f'Hello {ctx.author.mention}!')
 
 @bot.command()
-async def ping(ctx):
+async def p(ctx):
     await ctx.send(f'pong!')
 
 @bot.command()
