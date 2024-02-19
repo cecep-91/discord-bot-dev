@@ -14,8 +14,8 @@ pipeline {
                         } catch (err) {
                             echo err.getMessage()
                         }
-                        sh "kubectl exec -n discord-bot-dev discord-bot-dev-0 -- pip install -r /app/requirements.txt"
-                        sh "kubectl exec -n discord-bot-dev discord-bot-dev-0 -- python3 /app/bot.py"
+                        sh "kubectl exec -n discord-bot-dev $pod -- pip install -r /app/requirements.txt"
+                        sh "kubectl exec -n discord-bot-dev $pod -- python3 /app/bot.py"
                     }
                 }
             }
