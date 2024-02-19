@@ -1,6 +1,8 @@
 FROM python:latest
 
 RUN mkdir /app/
+RUN mkdir /secret/
+COPY bot.py /secret/
 WORKDIR /app/
 
 COPY . .
