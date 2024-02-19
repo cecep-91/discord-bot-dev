@@ -16,7 +16,12 @@ spec:
         - name: secret-volume
           mountPath: /app/.env
           subPath: .env
+        - name: config-volume
+          mountPath: /app
       volumes:
       - name: secret-volume
         secret:
           secretName: discord-bot-secret
+      - name: config-volume
+        configMap:
+          name: bot-config
