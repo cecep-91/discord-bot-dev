@@ -3,7 +3,7 @@ import os
 from discord.ext import commands
 from dotenv import load_dotenv
 
-dotenv_path = 'secret/.env'
+dotenv_path = '/secret/.env'
 load_dotenv(dotenv_path)
 
 intents = discord.Intents.default()
