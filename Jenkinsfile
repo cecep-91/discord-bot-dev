@@ -9,7 +9,7 @@ pipeline {
                         sh "kubectl apply -k kubernetes/"
                         sh "./check-health.sh"
                         try {
-                            sh "pod=$(kubectl get po -n discord-bot-dev | cut -d ' ' -f1 | grep discord-bot)"
+                            def pod = sh(script: 'kubectl get pod -n discord-bot-dev | cut -d " " -f1 | grep discord-bot', returnStdout: true).trim()
                             sh "kubectl exec -n discord-bot-dev $pod -- killall -9 python3"
                         } catch (err) {
                             echo err.getMessage()
