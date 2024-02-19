@@ -7,8 +7,6 @@ pipeline {
                 script {
                     withKubeConfig(credentialsId: 'kubeconfig') {
                         sh "kubectl apply -k kubernetes/"
-                        sh "./check-health.sh"
-                        def pod = sh(script: 'kubectl get pod -n discord-bot-dev | cut -d " " -f1 | grep discord-bot', returnStdout: true).trim()
                         sh "kubectl rollout restart deployment -n discord-bot-dev discord-bot-dev"
                     }
                 }
