@@ -15,8 +15,8 @@ spec:
           mountPath: /secret
       volumes:
       - name: config-volume
-        configMap:
-          name: bot-config
+        secret:
+          secretName: bot-config
       - name: secret-volume
         secret:
           secretName: discord-bot-secret
