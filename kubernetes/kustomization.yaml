@@ -3,5 +3,5 @@ resources:
 
 images:
  - name: discord-bot
-   newName: 'ikubaru/discord-bot'
-   newTag: '5'
+   newName: 'ikubaru/discord-bot-dev'
+   newTag: 'latest'
