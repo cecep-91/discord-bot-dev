@@ -1,8 +1,0 @@
-apiVersion: v1
-kind: Secret
-metadata:
-  name: bot-config
-type: Opaque
-data:
-  bot.py: should be base64 encoded bot.py file
-  requirements.txt: should be base64 encoded requirements.txt file

@@ -1,0 +1,3 @@
+resources:
+- bot-deploy.yaml
+- bot-storage.yaml

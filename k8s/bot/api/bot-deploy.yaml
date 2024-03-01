@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: discord-bot-dev
+spec:
+  replicas: 1
+  template:
+    metadata:
+    spec:
+      containers:
+      - name: discord-bot
+        image: discord-bot
+        command: ["sh", "-c", "pip install --no-cache-dir -r bot.req && python3 bot.py"]

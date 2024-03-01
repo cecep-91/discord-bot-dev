@@ -1,13 +1,15 @@
 pipeline {
     agent any
     stages {
-        stage('Deploy to Kubernetes') {
+        stage('Applying changes to container') {
             steps {
-                sh "./script.sh"
+                sh "copy bot/* /k8s/discord-bot-data/"
                 script {
                     withKubeConfig(credentialsId: 'kubeconfig') {
-                        sh "kubectl apply -k kubernetes/"
-                        sh "kubectl rollout restart deployment -n discord-bot-dev discord-bot-dev"
+                        sh "kubectl apply -k k8s/"
+                        sh "kubectl exec -n discord-bot-dev \
+                            $(kubectl get pod -n discord-bot-dev | cut -d ' ' -f1 | grep discord-bot-dev) -- \
+                            kill -9 $(pidof python3)"
                     }
                 }
             }

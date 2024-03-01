@@ -1,33 +1,70 @@
-import discord
 import os
-from discord.ext import commands
 from dotenv import load_dotenv
+from interactions
 
-dotenv_path = '/secret/.env'
-load_dotenv(dotenv_path)
+load_dotenv()
 
-intents = discord.Intents.default()
-intents.message_content = True
-intents.members = True
-
-bot = commands.Bot(command_prefix='!', intents=intents)
-
-@bot.event
-async def on_ready():
-    print(f'{bot.user.name} has connected to Discord!')
+bot = interactions.Client(
+    token = os.getenv("TOKEN"),
+    default_scope = int(os.getenv("SCOPE")),
+)
 
 @bot.command()
-async def hi(ctx):
-    await ctx.send(f'Hello {ctx.author.mention}!')
+async def say(ctx: interactions.CommandContext):
+    pass
+
+@say.subcommand()
+@interactions.option(description="Gimme number")
+async def number(ctx: interactions.CommandContext, number: int = None):
+    await ctx.send(f"You say {number}")
+
+@say.subcommand()
+@interactions.option(description="Gimme text")
+async def text(ctx: interactions.CommandContext, second_option: str):
+    await ctx.send(f"You say {second_option}")
+
+button1 = interactions.Button(
+    style=interactions.ButtonStyle.PRIMARY,
+    label="hello world!",
+    custom_id="hello",
+)
+
+button2 = interactions.Button(
+    style=interactions.ButtonStyle.DANGER,
+    label="bye bye!",
+    custom_id="bye!",
+)
+
+row = interactions.spread_to_rows(button1, button2)
 
 @bot.command()
-async def ping(ctx):
-    await ctx.send(f'yeah, it works!')
+async def test(ctx):
+    await ctx.send("rows!", components=row)
+
+@bot.component("hello")
+async def button_response(ctx):
+    await ctx.send("You clicked the hello Button :O", ephemeral=True)
+
+@bot.component("bye!")
+async def button_response(ctx):
+    await ctx.send("You clicked the bye Button :O", ephemeral=True)
 
 @bot.command()
-async def members(ctx):
-    members = ctx.guild.members
-    member_names = [f"- {member.name}" for member in members]
-    await ctx.send("Members in the server:\n" + '\n'.join(member_names))
+async def my_cool_modal_command(ctx):
+    modal = interactions.Modal(
+        title="Application Form",
+        custom_id="mod_app_form",
+        components=[interactions.TextInput(
+                        style=interactions.TextStyleType.SHORT,
+                        label="Let's get straight to it: what's 1 + 1?",
+                        custom_id="text_input_response",
+                        min_length=1,
+                        max_length=3,)],
+    )
 
-bot.run(os.getenv('TOKEN'))
+    await ctx.popup(modal)
+@bot.modal("mod_app_form")
+async def modal_response(ctx, response: str):
+    await ctx.send(f"You wrote: {response}", ephemeral=True)
+
+bot.start()
