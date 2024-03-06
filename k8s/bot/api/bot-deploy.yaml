@@ -10,4 +10,12 @@ spec:
       containers:
       - name: discord-bot
         image: discord-bot
-        command: ["sh", "-c", "pip install --no-cache-dir -r bot.req && python3 bot.py"]
+        command: ["sh", "-c", "pip install --no-cache-dir -r /app/bot.req && python3 /app/bot.py"]
+        volumeMounts:
+        - name: data-volume
+          mountPath: /app
+      volumes:
+      - name: data-volume
+        persistentVolumeClaim:
+          claimName: discord-bot-data
+
