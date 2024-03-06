@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Applying changes to container') {
             steps {
-                sh "copy bot/* /k8s/discord-bot-data/"
+                sh "cp bot/* /k8s/discord-bot-data/"
                 script {
                     withKubeConfig(credentialsId: 'kubeconfig') {
                         sh "kubectl apply -k k8s/"
