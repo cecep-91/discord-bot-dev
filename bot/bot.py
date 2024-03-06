@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-from interactions
+import interactions
 
 load_dotenv()
 
