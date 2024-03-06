@@ -16,7 +16,7 @@ spec:
         - key: bot-data
           operator: In
           values:
-          - true
+          - 'true'
   hostPath:
     path: /k8s/discord-bot-data
 ---
