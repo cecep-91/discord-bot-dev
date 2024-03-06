@@ -7,9 +7,7 @@ pipeline {
                 script {
                     withKubeConfig(credentialsId: 'kubeconfig') {
                         sh "kubectl apply -k k8s/"
-                        sh "kubectl exec -n discord-bot-dev \
-                            $(kubectl get pod -n discord-bot-dev | cut -d ' ' -f1 | grep discord-bot-dev) -- \
-                            kill -9 $(pidof python3)"
+                        sh "kubectl exec -n discord-bot-dev $(kubectl get pod -n discord-bot-dev | cut -d ' ' -f1 | grep discord-bot-dev) -- kill -9 $(pidof python3)"
                     }
                 }
             }
